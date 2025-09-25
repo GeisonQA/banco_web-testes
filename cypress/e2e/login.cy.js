@@ -1,23 +1,31 @@
 describe('login', () => {
-  it('Login com dados validos deve permitir efetuar login', () => {
+
+  beforeEach(() => {
     cy.visit('http://localhost:4000');
+    cy.screenshot('tela-inicial')
+    
+  })
 
-    cy.get('#username').click().type('julio.lima');
-    cy.get('#senha').click().type("123456");
-    cy.contains('button', 'Entrar').click();
+    it('Login com dados validos deve permitir efetuar login', () => {
 
-    cy.contains('h4', 'Realizar Transferência').should('be.visible');
-    // abre o Google
-  });
+      cy.get('#username').click().type('julio.lima');
+      cy.get('#senha').click().type("123456");
+      cy.screenshot('dados-login')
+      cy.contains('button', 'Entrar').click();
+      
+
+      cy.contains('h4', 'Realizar Transferência').should('be.visible');
+      cy.screenshot('tela-apos-login')
+      
+    });
 
   it('login com dados invalidos deve apresentar erro', () => {
-    cy.visit('http://localhost:4000');
 
     cy.get('#username').click().type('julio.lima');
     cy.get('#senha').click().type("12345");
     cy.contains('button', 'Entrar').click();
 
     cy.get('.toast').should('have.text', 'Erro no login. Tente novamente.');
-    // abre o Google
+
   });
 });
