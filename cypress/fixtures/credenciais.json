@@ -1,0 +1,10 @@
+{
+  "validas": {
+    "username": "julio.lima",
+    "senha": "123456"
+  },
+  "invalidas": {
+    "username": "julio.lima",
+    "senha": "654321"
+  }
+}
