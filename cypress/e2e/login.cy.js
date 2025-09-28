@@ -2,7 +2,7 @@ describe('Login', () => {
 
   beforeEach(() => {
     cy.visit('http://localhost:4000')
-    cy.screenshot('login')
+    
   });
 
   it('Login com dados validos deve permitir acesso ao site do banco web', () => {
@@ -20,6 +20,6 @@ describe('Login', () => {
       cy.contains('button', 'Entrar').click()
 
       cy.contains('.toast', 'Erro no login. Tente novamente').should('be.visible')
-      cy.screenshot('login-erro')
+     
     })
 })
