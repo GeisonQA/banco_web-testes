@@ -9,4 +9,6 @@ Cypress.Commands.add('selecionarOpcaoDeTranferencia', (opçãoDeTranferencia, cl
 
 })
 
-
+Cypress.Commands.add('validarTransferencia',()=>{
+    cy.get('.green').should('be-visible')
+})
