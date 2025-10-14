@@ -1,5 +1,5 @@
 Cypress.Commands.add('verificarMensagemToast', mensagem => {
-    cy.get('.toast').should('have.text', mensagem)
+   cy.get('.toast').should('have.text', mensagem)
 })
 
 Cypress.Commands.add('selecionarOpcaoDeTranferencia', (opçãoDeTranferencia, cliente) => {
@@ -9,4 +9,6 @@ Cypress.Commands.add('selecionarOpcaoDeTranferencia', (opçãoDeTranferencia, cl
 
 })
 
-
+Cypress.Commands.add('validarTransferencia',()=>{
+    cy.get('.green').should('be-visible')
+})

@@ -4,3 +4,6 @@ Cypress.Commands.add('realizarTransferencia', (contaOrigem, contaDestino, valor)
     cy.get('#valor').click().type(valor)
     cy.contains('button', 'Transferir').click()
 })
+Cypress.Commands.add('validarToken',token =>{
+    cy.get('#token').click().type(token)
+})
