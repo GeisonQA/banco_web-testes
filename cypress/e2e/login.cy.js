@@ -11,8 +11,8 @@ describe('Login', () => {
     cy.contains('h4', 'Realizar Transferência').should('be.visible')
   }),
 
-    it('Login com dados invalidos não deve permitir acesso ao site do banco web', () => {
+    it.only('Login com dados invalidos não deve permitir acesso ao site do banco web', () => {
       cy.fazerLoginComCredenciaisInvalidas()
-      cy.verificarMensagemToast('Erro no login. Tente novamente')
+      cy.verificarMensagemToast('Erro no login. Tente novamente.') 
     })
 })
